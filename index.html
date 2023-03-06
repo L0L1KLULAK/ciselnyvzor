@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="number">Zadejte číslo:</label>
+        <input type="text" id="number" name="number"><br><br>
+        <input type="button" value="Vypsat" onclick="printNumbers()">
+      </form>
+      <br>
+      <div id="output"></div>
+      
+      <script>
+        function printNumbers() {
+          var number = document.getElementById("number").value;
+          
+          number = parseInt(number);
+          
+          var output = "";
+          
+          while (number > 0) {
+            output += number + "<br>";
+            number = Math.floor(number / 10);
+          }
+          
+          document.getElementById("output").innerHTML = output;
+        }
+      </script>
+</body>
+</html>
